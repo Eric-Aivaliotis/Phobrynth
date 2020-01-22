@@ -235,8 +235,6 @@ void Game::LoadContent() {
 	//New Object loader 
 	glm::vec4 baseColor = glm::vec4(1, 1, 1, 1);
 	//Objectloader::LoadObject("Level1_Floorless.obj", baseColor);
-	
-	//myMesh = std::make_shared<Mesh>(vertices, 4, indices, 6);
 
 	//Objectloader::LoadObjectToMesh("Level1_Floorless.obj", baseColor);
 
@@ -445,7 +443,6 @@ void Game::LoadContent() {
 		if (rotateRight == true) { //Rotation Right
 			up.Function = rotR;
 		}
-		//*/
 	}
 }
 
@@ -534,8 +531,8 @@ void Game::Update(float deltaTime) {
 
 	//Forward
 	if (glfwGetKey(myWindow, GLFW_KEY_W) == GLFW_PRESS) {
-		//myModelTransformObj = glm::translate(myModelTransformObj, glm::vec3(0.0f, 0.013, 0.0));
-		myModelTransformObj += glm::translate(myModelTransformObj, glm::vec3(CameraPosX, CameraPosY, 0.0));
+		myModelTransformObj = glm::translate(myModelTransformObj, glm::vec3(0.0f, 0.013, 0.0));
+		//myModelTransformObj += glm::translate(myModelTransformObj, glm::vec3(CameraPosX, CameraPosY, 0.0));
 		movement.y += speed * deltaTime;
 		moveForward = true;
 	}
